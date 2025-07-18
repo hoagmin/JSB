@@ -1,15 +1,117 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Starter</title>
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Giới thiệu bản thân</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #eef3f7;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .grid-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .box {
+      background: linear-gradient(135deg, #ffffff, #eaf3fb);
+      width: 250px;
+      min-height: 300px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+    }
+
+    .box img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .box h3 {
+      margin: 15px 0 5px;
+      color: #0077cc;
+    }
+
+    .box p {
+      padding: 0 15px 15px;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
 </head>
 <body>
-    <h1 class="text-center">Hello!</h1>111
-    <!-- Bootstrap JS Bundle CDN (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <h1>👤 Hoàng Minh</h1>
+
+  <div class="grid-container">
+    <a href="info.html" class="box">
+      <img src="chad.webp" alt="Ảnh cá nhân">
+      <h3>Info</h3>
+      <p>Học sinh trường THPT chuyên Trần Đại Nghĩa.</p>
+    </a>
+
+    <a href="hobbies.html" class="box">
+      <img src="chad.webp" alt="Sở thích">
+      <h3>Sở thích</h3>
+      <p>Đánh cầu lông, chơi game.</p>
+    </a>
+
+    <a href="goals.html" class="box">
+      <img src="chad.webp" alt="Mục tiêu">
+      <h3>Mục tiêu</h3>
+      <p>Trở thành lập trình viên.</p>
+    </a>
+
+    <a href="team.html" class="box">
+      <img src="chad.webp" alt="Đội nhóm">
+      <h3>Đội nhóm</h3>
+      <p>Dự án thể thao học đường SPORTIFY.</p>
+    </a>
+
+    <a href="projects.html" class="box">
+      <img src="chad.webp" alt="Dự án">
+      <h3>Dự án</h3>
+      <p>Đã làm website.</p>
+    </a>
+
+    <a href="contact.html" class="box">
+      <img src="chad.webp" alt="Liên hệ">
+      <h3>Liên hệ</h3>
+      <p>Email: hoangminh0119@gmail.com<br>Facebook: /minhtruong</p>
+    </a>
+
+    <a href="skills.html" class="box">
+      <img src="chad.webp" alt="Kỹ năng">
+      <h3>Kỹ năng</h3>
+      <p>HTML, CSS, teamwork, quản lý sự kiện.</p>
+    </a>
+
+    <a href="slogan.html" class="box">
+      <img src="chad.webp" alt="Slogan">
+      <h3>Slogan</h3>
+      <p>“Làm hết sức, chơi hết mình!” 💪</p>
+    </a>
+  </div>
 </body>
 </html>
