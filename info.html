@@ -1,52 +1,89 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Thông tin cá nhân</title>
+  <meta charset="UTF-8" />
+  <title>Giới thiệu - Minh Trương</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f5faff;
       margin: 0;
-      padding: 20px;
-    }
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      overflow: hidden;
-      text-align: center;
-    }
-    img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-    h1 {
-      color: #007acc;
-      margin: 20px 0 10px;
-    }
-    p {
-      font-size: 16px;
+      background-color: #f0f8ff;
       color: #333;
-      padding: 0 20px 20px;
     }
-    a {
-      display: inline-block;
-      margin-bottom: 20px;
-      color: #007acc;
+    header {
+      background-color: #0077cc;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+    .content img {
+      flex: 1 1 300px;
+      border-radius: 12px;
+      max-width: 100%;
+    }
+    .text {
+      flex: 2 1 400px;
+    }
+    .text h2 {
+      color: #0077cc;
+    }
+    .back {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .back a {
       text-decoration: none;
+      background: #0077cc;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .back a:hover {
+      background: #005fa3;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #e0e0e0;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="chad.webp" alt="Ảnh đại diện">
-    <h1>Trương Hoàng Minh</h1>
-    <p>Học sinh trường THPT chuyên Trần Đại Nghĩa.</p>
-    <a href="index.html">← Quay lại trang chính</a>
+
+<header>
+  <h1>Giới thiệu bản thân</h1>
+</header>
+
+<div class="content">
+  <img src="chad.webp" alt="Ảnh cá nhân" />
+  <div class="text">
+    <h2>Xin chào!</h2>
+    <p>Mình là <strong>Trương Hoàng Minh</strong>, hiện đang là học sinh tại trường THPT chuyên Trần Đại Nghĩa. Trang web này là nơi mình chia sẻ thông tin cá nhân, sở thích, dự án và mục tiêu nghề nghiệp.</p>
   </div>
+</div>
+
+<div class="back">
+  <a href="index.html">🔙 Quay về trang chủ</a>
+</div>
+
+<footer>
+  &copy; 2025 Minh Trương – info.html
+</footer>
+
 </body>
 </html>
+

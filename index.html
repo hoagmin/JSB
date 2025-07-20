@@ -2,116 +2,286 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Giới thiệu bản thân</title>
+  <title>Giới thiệu bản thân - Trương Hoàng Minh</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background-color: #eef3f7;
-      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
     }
 
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-      margin-bottom: 30px;
-    }
-
-    .grid-container {
+    /* Navbar */
+    nav {
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    .box {
-      background: linear-gradient(135deg, #ffffff, #eaf3fb);
-      width: 250px;
-      min-height: 300px;
-      border-radius: 15px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      overflow: hidden;
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-left img {
+      height: 40px;
+    }
+
+    .nav-left h2 {
+      margin: 0;
+      font-size: 20px;
+      color: #1e90ff;
+    }
+
+    .nav-links a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #1e90ff;
+    }
+
+    .search-box input {
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      outline: none;
+    }
+
+    header {
+      background-color: #1e90ff;
+      color: white;
+      padding: 40px 20px;
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      margin: 0;
+    }
+
+    .carousel-container {
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-slide {
+      display: flex;
+      width: 300%;
+      animation: slide 12s infinite;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 2em;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #222;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       text-decoration: none;
       color: inherit;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
     }
 
-    .box img {
+    .card img {
       width: 100%;
-      height: 160px;
+      height: 180px;
       object-fit: cover;
-      border-bottom: 2px solid #ccc;
     }
 
-    .box h3 {
-      margin: 15px 0 5px;
+    .card h3 {
+      margin: 18px 0 10px;
+      font-size: 1.4em;
+      text-align: center;
+      color: #1e90ff;
+    }
+
+    .card p {
+      padding: 0 20px 24px;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    .highlight-box {
+      margin: 40px auto;
+      background-color: #e6f3ff;
+      padding: 30px;
+      border-radius: 14px;
+      text-align: center;
+      max-width: 1000px;
+    }
+
+    .highlight-box h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
       color: #0077cc;
     }
 
-    .box p {
-      padding: 0 15px 15px;
+    footer {
+      text-align: center;
+      background-color: #e6f0f9;
+      padding: 20px;
       font-size: 14px;
-      color: #444;
+      color: #555;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>👤 Hoàng Minh</h1>
 
-  <div class="grid-container">
-    <a href="info.html" class="box">
-      <img src="chad.webp" alt="Ảnh cá nhân">
-      <h3>Info</h3>
-      <p>Học sinh trường THPT chuyên Trần Đại Nghĩa.</p>
-    </a>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-left">
+      <img src="nhinhu.jpg" alt="Logo Website">
+      <h2>MinhTruong Portfolio</h2>
+    </div>
+    <div class="nav-links">
+      <a href="#gioi-thieu">Giới thiệu</a>
+      <a href="#du-an">Dự án</a>
+      <a href="#lien-he">Liên hệ</a>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Tìm kiếm...">
+    </div>
+  </nav>
 
-    <a href="hobbies.html" class="box">
-      <img src="chad.webp" alt="Sở thích">
-      <h3>Sở thích</h3>
-      <p>Đánh cầu lông, chơi game.</p>
-    </a>
+  <!-- Header -->
+  <header>
+    <h1>👤 Trương Hoàng Minh</h1>
+    <p>Học sinh trường THPT chuyên Trần Đại Nghĩa</p>
+  </header>
 
-    <a href="goals.html" class="box">
-      <img src="chad.webp" alt="Mục tiêu">
-      <h3>Mục tiêu</h3>
-      <p>Trở thành lập trình viên.</p>
-    </a>
-
-    <a href="team.html" class="box">
-      <img src="chad.webp" alt="Đội nhóm">
-      <h3>Đội nhóm</h3>
-      <p>Dự án thể thao học đường SPORTIFY.</p>
-    </a>
-
-    <a href="projects.html" class="box">
-      <img src="chad.webp" alt="Dự án">
-      <h3>Dự án</h3>
-      <p>Đã làm website.</p>
-    </a>
-
-    <a href="contact.html" class="box">
-      <img src="chad.webp" alt="Liên hệ">
-      <h3>Liên hệ</h3>
-      <p>Email: hoangminh0119@gmail.com<br>Facebook: /minhtruong</p>
-    </a>
-
-    <a href="skills.html" class="box">
-      <img src="chad.webp" alt="Kỹ năng">
-      <h3>Kỹ năng</h3>
-      <p>HTML, CSS, teamwork, quản lý sự kiện.</p>
-    </a>
-
-    <a href="slogan.html" class="box">
-      <img src="chad.webp" alt="Slogan">
-      <h3>Slogan</h3>
-      <p>“Làm hết sức, chơi hết mình!” 💪</p>
-    </a>
+  <!-- Carousel -->
+  <div class="carousel-container">
+    <div class="carousel-slide">
+      <img src="ôm đầu.jpg" alt="Ảnh giới thiệu 1">
+      <img src="bbb.png" alt="Ảnh giới thiệu 2">
+      <img src="a.png" alt="Ảnh giới thiệu 3">
+    </div>
   </div>
+
+  <!-- Highlight Box -->
+  <div class="highlight-box" id="gioi-thieu">
+    <h2>“Luôn học hỏi, luôn cố gắng – Không ngừng phát triển bản thân.”</h2>
+    <p>Đây là website cá nhân để chia sẻ thông tin, kỹ năng và các dự án của mình.</p>
+  </div>
+
+  <!-- Grid Section -->
+  <section class="section" id="du-an">
+    <h2 class="section-title">Thông tin cá nhân</h2>
+    <div class="grid">
+      <a href="info.html" class="card">
+        <img src="chad.webp" alt="Ảnh cá nhân">
+        <h3>Giới thiệu</h3>
+        <p>Thông tin cơ bản về mình.</p>
+      </a>
+      <a href="hobbies.html" class="card">
+        <img src="chad.webp" alt="Sở thích">
+        <h3>Sở thích</h3>
+        <p>Đánh cầu lông, chơi game và nhiều hơn nữa.</p>
+      </a>
+      <a href="goals.html" class="card">
+        <img src="chad.webp" alt="Mục tiêu">
+        <h3>Mục tiêu</h3>
+        <p>Trở thành lập trình viên và xây dựng sản phẩm sáng tạo.</p>
+      </a>
+      <a href="team.html" class="card">
+        <img src="chad.webp" alt="Đội nhóm">
+        <h3>Đội nhóm</h3>
+        <p>Tham gia dự án thể thao học đường SPORTIFY.</p>
+      </a>
+      <a href="projects.html" class="card">
+        <img src="chad.webp" alt="Dự án">
+        <h3>Dự án</h3>
+        <p>Xây dựng website, tổ chức sự kiện học sinh.</p>
+      </a>
+      <a href="contact.html" class="card" id="lien-he">
+        <img src="chad.webp" alt="Liên hệ">
+        <h3>Liên hệ</h3>
+        <p>Email: hoangminh0119@gmail.com <br> Facebook: /minhtruong</p>
+      </a>
+      <a href="skills.html" class="card">
+        <img src="chad.webp" alt="Kỹ năng">
+        <h3>Kỹ năng</h3>
+        <p>Thiết kế web, làm việc nhóm, thuyết trình.</p>
+      </a>
+      <a href="future.html" class="card">
+        <img src="chad.webp" alt="Định hướng tương lai">
+        <h3>Định hướng</h3>
+        <p>Du học, làm việc trong ngành công nghệ và giáo dục.</p>
+      </a>
+
+      <!-- NEW card for quotes.html -->
+      <a href="quotes.html" class="card">
+        <img src="chad.webp" alt="Châm ngôn sống">
+        <h3>Châm ngôn sống</h3>
+        <p>Góc nhìn và triết lý sống truyền cảm hứng.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Trương Hoàng Minh - Website giới thiệu cá nhân
+  </footer>
+
 </body>
 </html>
+
